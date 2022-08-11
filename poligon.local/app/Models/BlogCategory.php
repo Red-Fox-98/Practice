@@ -57,25 +57,25 @@ class BlogCategory extends Model
         return $this->id === BlogCategory::ROOT;
     }
 
-    /**
-     * Пример аксесуара
-     *
-     * @param string $valueFromDB
-     *
-     * @return bool\mixed\null\string\string[]
-     */
-    public function getTitleAttribute($valueFromObject){
-        return mb_strtoupper($valueFromObject);
-    }
-
-    /**
-     * Пример мутатора
-     *
-     * @param string $incomingValue
-     */
-    public function setTitleAttribute(string $incomingValue){
-        $this->attributes['title'] = mb_strtolower($incomingValue);
-    }
+//    /**
+//     * Пример аксесуара
+//     *
+//     * @param string $valueFromDB
+//     *
+//     * @return bool\mixed\null\string\string[]
+//     */
+//    public function getTitleAttribute($valueFromObject){
+//        return mb_strtoupper($valueFromObject);
+//    }
+//
+//    /**
+//     * Пример мутатора
+//     *
+//     * @param string $incomingValue
+//     */
+//    public function setTitleAttribute(string $incomingValue){
+//        $this->attributes['title'] = mb_strtolower($incomingValue);
+//    }
 
     /**
      * Получить родительскую категорию

@@ -41,7 +41,7 @@ class CategoryController extends BaseController
      */
     public function create()
     {
-        $item = new BlogCategory();
+        $item = BlogCategory::make();
         $categoryList
             = $this->blogCategoryRepository->getForComboBox();
 
@@ -62,7 +62,7 @@ class CategoryController extends BaseController
 //            $data['slug'] = Str::slug($data['title']);
 //        }
 
-        $item = (new BlogCategory())->create($data);
+        $item = BlogCategory::create($data);
 
         if ($item) {
             return redirect()->route('blog.admin.categories.edit', [$item->id])
@@ -92,21 +92,6 @@ class CategoryController extends BaseController
     public function edit($id)
     {
         $item = $this->blogCategoryRepository->getEdit($id);
-
-        $v['title_before'] = $item->title;
-
-        $item->title = 'ASDasdasdaSD asdasd 1212';
-
-        $v['title_after'] = $item->title;
-        $v['getAttribute'] = $item->getAttribute('title');
-        $v['attributesToArray'] = $item->attributesToArray();
-        $v['attributes'] = $item->attributes['title'] ?? null;
-        $v['getAttributeValue'] = $item->getAttributeValue('title');
-        $v['getMutatedAttributes'] = $item->getMutatedAttributes();
-        $v['hasGetMutator for title'] = $item->hasGetMutator('title');
-        $v['toArray'] = $item->toArray();
-
-        dd($v, $item);
 
         if (empty($item)) {
             abort(404);

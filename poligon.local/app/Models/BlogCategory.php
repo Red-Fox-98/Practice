@@ -33,7 +33,7 @@ class BlogCategory extends Model
     ];
 
     /**
-     * Пример фксесуара (Accessor)
+     * Accessor
      *
      * @url https://laravel.com/docs/9.x/eloquent-mutators
      *
